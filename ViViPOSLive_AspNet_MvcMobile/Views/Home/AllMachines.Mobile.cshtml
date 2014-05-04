@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MvcMobile.Models.Machine>
+
+@{
+    ViewBag.Title = "All Machines";
+}
+
+
+<ul data-role="listview" data-filter="true">
+    @if (Model == null)
+    {
+        @ViewBag.ErrorMessage;
+    }
+    else
+    {
+        foreach (var machine in Model)
+        {
+            <li>@Html.ActionLink(machine.Serial, "AllTables", new { machine.MacAddress })</li>
+        }
+    }
+</ul>

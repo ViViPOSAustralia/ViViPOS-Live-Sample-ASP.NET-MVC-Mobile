@@ -1,0 +1,4 @@
+
+*.suo
+/ViViPOSLive_AspNet_MvcMobile/bin
+/ViViPOSLive_AspNet_MvcMobile/obj

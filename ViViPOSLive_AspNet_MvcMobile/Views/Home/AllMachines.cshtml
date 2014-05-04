@@ -1,0 +1,25 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "All Products";
+
+}
+
+<h2>Speakers</h2>
+
+<ul data-role="listview" data-filter="true">
+    @if (Model == null)
+    {
+        @ViewBag.ErrorMessage;
+    }
+    else
+    {
+
+        foreach (var product in Model)
+        {
+            <li>@Html.ActionLink(product, "SessionsBySpeaker", new { product })</li>
+        }
+    }
+</ul>
+
+

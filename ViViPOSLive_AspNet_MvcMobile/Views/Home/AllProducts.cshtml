@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MvcMobile.Models.Product>
+
+@{
+    ViewBag.Title = "All Products";
+}
+
+
+<ul data-role="listview" data-filter="true">
+    @if (Model == null)
+    {
+        @ViewBag.ErrorMessage;
+    }
+    else
+    {
+        foreach (var product in Model)
+        {
+            <li>@Html.ActionLink(product.Name, "AllProducts", new { product.Name })</li>
+        }
+    }
+</ul>
