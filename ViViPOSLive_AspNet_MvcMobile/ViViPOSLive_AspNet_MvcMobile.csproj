@@ -173,6 +173,7 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\fastclick.js" />
     <Content Include="Scripts\jquery-1.6.3-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
@@ -227,10 +228,8 @@
     <Content Include="Views\Home\AllMachines.Mobile.cshtml" />
     <Content Include="Views\Home\AllTables.cshtml" />
     <Content Include="Views\Home\AllProducts.Mobile.cshtml" />
-    <None Include="Views\Home\AllTags.Mobile.cshtml" />
     <Content Include="Views\Shared\_ViewSwitcher.cshtml" />
     <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
-    <None Include="Views\Home\AllSpeakers.Mobile.cshtml" />
     <Content Include="Views\Home\AllDates.Mobile.cshtml" />
     <Content Include="Views\Home\SessionsTable.Mobile.cshtml" />
     <Content Include="Views\Home\SessionByCode.Mobile.cshtml" />
@@ -240,8 +239,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\AllDates.cshtml" />
-    <Content Include="Views\Home\AllSpeakers.cshtml" />
-    <Content Include="Views\Home\AllTags.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\SessionByCode.cshtml" />
     <Content Include="Views\Home\SessionsTable.cshtml" />
@@ -250,11 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.iPhone.cshtml" />
-    <Content Include="Views\Home\AllTags.iPhone.cshtml" />
     <None Include="Views\Shared\_Layout.Mobile.cshtml.hide" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Home\AllTags.iPhone.cshtml.hide" />
     <None Include="Views\Shared\z_Layout.iPhone.cshtml" />
   </ItemGroup>
   <PropertyGroup>

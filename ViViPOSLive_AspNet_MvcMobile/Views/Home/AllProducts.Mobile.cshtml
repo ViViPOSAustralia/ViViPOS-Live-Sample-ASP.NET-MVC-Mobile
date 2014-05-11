@@ -3,9 +3,35 @@
 @{
     ViewBag.Title = "All Products";
 }
+<script type="application/javascript" src="~/Scripts/fastclick.js"></script>
+<script type="text/javascript">
+    $(function () {
+        FastClick.attach(document.body);
+    });
 
+    var cartTotal = 0;
+    $('#total').html(cartTotal);
+    function addItem(id,amount) {
+        cartTotal = cartTotal + parseInt(amount);
+        $('#total').html(Math.round(cartTotal));
+        var qty = $('#' + id + "_qty").html();
+        if (qty != "&nbsp;") {
+            $('#' + id + "_qty").html(parseInt($('#' + id + "_qty").html()) + 1);
+        }
+        else {
+            $('#' + id + "_qty").html(1);
+        }
 
-<ul data-role="listview" data-filter="true">
+    }
+
+    function voidOrder() {
+        cartTotal = 0;
+        $("#total").html("0");
+        $(".qty").html("&nbsp;");
+    }
+</script>
+<div style="height:56px;margin-top:-8px; font-size:30px"><a style="font-size:20px;text-decoration:none" onclick="voidOrder()">Void</a><span style="float:right" id="total">0</span><span style="float:right">Total: $</span></div>
+<ul  data-role="listview" data-filter="true">
     @if (Model == null)
     {
         @ViewBag.ErrorMessage;
@@ -14,7 +40,9 @@
     {
         foreach (var product in Model)
         {
-            <li>@Html.ActionLink(product.Name, "AllProducts", new { product.Name })</li>
+            @*<li>@Html.ActionLink(product.Name, "AllProducts", new { product.Name })</li>*@
+            <li onclick="addItem('@product.Id', '@product.PriceLevel1')"><a style="padding-left:4px;"><div id="@(product.Id)_qty" class="qty" style="float:left; width:25px; text-align:right; margin-right:5px;">&nbsp;</div>@Html.DisplayFor(modelItem => product.Name)</a></li>
+
         }
     }
 </ul>
